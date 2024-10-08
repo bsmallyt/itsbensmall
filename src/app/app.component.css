@@ -11,6 +11,7 @@ mat-tab-group {
 .toolbar-text {
   font-family: "Times New Roman", Times, serif;
   font-weight: bold;
+  color: black;
 }
 .toolbar-title-button {
   border: none;
