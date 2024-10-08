@@ -1,5 +1,5 @@
 <mat-toolbar>
-  <button mat-icon-button [matMenuTriggerFor]="menu" class="toolbar-icon-button">
+  <button mat-icon-button [matMenuTriggerFor]="menu" class="toolbar-icon-button" title="menu">
     <div class="toolbar-icon-div">
       <i class="fa-solid fa-bars toolbar-icon"></i>
     </div>
@@ -8,12 +8,12 @@
     <span class="toolbar-text">itsbensmall</span>
   </button>
   <span class="toolbar-spacer"></span>
-  <button mat-icon-button (click)="toggle('projects')" class="toolbar-icon-button" >
+  <button mat-icon-button (click)="toggle('projects')" class="toolbar-icon-button" title="projects" >
     <div class="toolbar-icon-div">
       <i class="fa-solid fa-code toolbar-icon"></i>
     </div>
   </button>
-  <button mat-icon-button (click)="toggle('redcube')" class="toolbar-icon-button">
+  <button mat-icon-button (click)="toggle('redcube')" class="toolbar-icon-button" title="redcube">
     <div class="toolbar-icon-div">
       <i class="fa-solid fa-cube toolbar-icon"></i>
     </div>
@@ -23,24 +23,34 @@
 
 <!--for the Menu selector section-->
 <mat-menu #menu="matMenu">
-  <button mat-menu-item (click)="toggle('about_me')">
-    <i class="fa-solid fa-cube toolbar-icon"></i>
-    <span>about me</span>
+  <button mat-menu-item (click)="toggle('about_me')" class="menu-item mat-mdc-menu-item">
+    <div class="mat-mdc-menu-item">
+      <i class="fa-solid fa-cube menu-icon"></i>
+      <span>about me</span>
+    </div>
   </button>
   <button mat-menu-item (click)="toggle('projects')">
-    <i class="fa-solid fa-cube toolbar-icon"></i>
-    <span>projects</span>
+    <div class="mat-mdc-menu-item">
+      <i class="fa-solid fa-cube menu-icon"></i>
+      <span>projects</span>
+    </div>
   </button>
   <button mat-menu-item (click)="toggle('contact_me')" disabled>
-    <i class="fa-solid fa-cube toolbar-icon"></i>
-    <span>contact me</span>
+    <div class="mat-mdc-menu-item">
+      <i class="fa-solid fa-cube menu-icon"></i>
+      <span>contact me</span>
+    </div>
   </button>
 </mat-menu>
 
 
 <!--for the Projects section-->
-<mat-tab-group *ngIf="display['projects'] || display['redcube']">
+<mat-tab-group *ngIf="display['projects'] || display['redcube'] || display['about_me']">
   <div class="tabs">
+    <mat-tab *ngIf="display['about_me']" label="it's me"></mat-tab>
+
+
+
     <mat-tab *ngIf="display['projects']" label="webscrapper">
     </mat-tab>
     <mat-tab *ngIf="display['projects']" label="this website">

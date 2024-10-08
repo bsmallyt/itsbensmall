@@ -32,3 +32,11 @@ mat-tab-group {
   justify-content: center;
   align-items: center;
 }
+.toolbar-icon-button:hover{
+  text-transform: uppercase;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: row;
+}

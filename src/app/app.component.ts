@@ -32,6 +32,13 @@ export class AppComponent {
       this.display[toggle] = false;
     });
     this.display[key] = true;
+    if (key == 'home') {
+      this.forceReload();
+    }
+  }
+
+  forceReload() {
+    window.location.reload();
   }
 }
 
