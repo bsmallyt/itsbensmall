@@ -19,7 +19,8 @@ mat-tab-group {
   font-size: 20px;
 }
 .toolbar-title-button:hover {
-  text-decoration-line: underline black;
+  text-decoration-line: underline;
+  text-decoration: black;
 }
 .toolbar-icon {
   color: red;
