@@ -17,12 +17,17 @@ export class AppGame implements AfterViewInit {
   constructor(private renderer2: Renderer2, @Inject(DOCUMENT) private document: Document) {}
 
   ngAfterViewInit() {
+    this.initializeGame();
+  }
+
+  initializeGame() {
     this.resizeCanvas();
     const canvas = this.game.nativeElement;
     const ctx = canvas.getContext('2d');
 
     if (ctx) {
-      game.startGame(ctx, canvas);
+      game.stop(); 
+      game.startGame(ctx, canvas, false);
     }
   }
 
