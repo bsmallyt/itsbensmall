@@ -18,10 +18,21 @@ import { AppGame } from "./game.component";
 export class AppComponent {
   title = 'itsbensmall';
 
-  showDisplay: boolean = false;
+  display: Record<string, boolean> = {
+    home: true,
+    about_me: false,
+    projects: false,
+    contact_me: false,
+    redcube: false,
+  };
 
-  toggleVisibility() {
-    this.showDisplay = !this.showDisplay;
+  toggle(key: string) {
+    if (!this.display[key]) {
+      Object.keys(this.display).forEach(toggle => {
+        this.display[toggle] = false;
+      });
+      this.display[key] = true;
+    }
   }
 }
 

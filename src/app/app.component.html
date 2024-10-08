@@ -4,16 +4,16 @@
       <i class="fa-solid fa-bars toolbar-icon"></i>
     </div>
   </button>
-  <button class="toolbar-title-button">
+  <button (click)="toggle('home')" class="toolbar-title-button">
     <span class="toolbar-text">itsbensmall</span>
   </button>
   <span class="toolbar-spacer"></span>
-  <button mat-icon-button (click)="toggleVisibility()" class="toolbar-icon-button" >
+  <button mat-icon-button (click)="toggle('projects')" class="toolbar-icon-button" >
     <div class="toolbar-icon-div">
       <i class="fa-solid fa-code toolbar-icon"></i>
     </div>
   </button>
-  <button mat-icon-button class="toolbar-icon-button">
+  <button mat-icon-button (click)="toggle('redcube')" class="toolbar-icon-button">
     <div class="toolbar-icon-div">
       <i class="fa-solid fa-cube toolbar-icon"></i>
     </div>
@@ -23,15 +23,15 @@
 
 <!--for the Menu selector section-->
 <mat-menu #menu="matMenu">
-  <button mat-menu-item>
+  <button mat-menu-item (click)="toggle('about_me')">
     <i class="fa-solid fa-cube toolbar-icon"></i>
     <span>about me</span>
   </button>
-  <button mat-menu-item (click)="toggleVisibility()">
+  <button mat-menu-item (click)="toggle('projects')">
     <i class="fa-solid fa-cube toolbar-icon"></i>
     <span>projects</span>
   </button>
-  <button mat-menu-item disabled>
+  <button mat-menu-item (click)="toggle('contact_me')" disabled>
     <i class="fa-solid fa-cube toolbar-icon"></i>
     <span>contact me</span>
   </button>
@@ -40,7 +40,7 @@
 
 
 <!--for the Projects section-->
-<mat-tab-group *ngIf="showDisplay">
+<mat-tab-group *ngIf="display['projects']">
   <div class="tabs">
     <mat-tab label="webscrapper">
     </mat-tab>
@@ -54,6 +54,16 @@
     </mat-tab>
   </div>
 </mat-tab-group>
+
+<!--for the redcube section-->
+<mat-tab-group *ngIf="display['redcube']">
+  <div class="tabs">
+    <mat-tab label="the redcube">
+      <app-game></app-game>
+    </mat-tab>
+  </div>
+</mat-tab-group>
+
 
 
 <!--
