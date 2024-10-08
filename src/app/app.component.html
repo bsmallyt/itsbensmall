@@ -23,22 +23,28 @@
 
 <!--for the Menu selector section-->
 <mat-menu #menu="matMenu">
-  <button mat-menu-item (click)="toggle('about_me')" class="menu-item mat-mdc-menu-item">
-    <div class="mat-mdc-menu-item">
-      <i class="fa-solid fa-cube menu-icon"></i>
-      <span>about me</span>
+  <button mat-menu-item (click)="toggle('about_me')">
+    <div class="mat-mdc-menu-item menu-icon-div">
+      <i class="fa-solid fa-film menu-icon"></i>
+      <span class="menu-span">its me</span>
     </div>
   </button>
   <button mat-menu-item (click)="toggle('projects')">
-    <div class="mat-mdc-menu-item">
+    <div class="mat-mdc-menu-item menu-icon-div">
+      <i class="fa-solid fa-code menu-icon"></i>
+      <span class="menu-span">projects</span>
+    </div>
+  </button>
+  <button mat-menu-item (click)="toggle('redcube')">
+    <div class="mat-mdc-menu-item menu-icon-div">
       <i class="fa-solid fa-cube menu-icon"></i>
-      <span>projects</span>
+      <span class="menu-span">games</span>
     </div>
   </button>
   <button mat-menu-item (click)="toggle('contact_me')" disabled>
-    <div class="mat-mdc-menu-item">
-      <i class="fa-solid fa-cube menu-icon"></i>
-      <span>contact me</span>
+    <div class="mat-mdc-menu-item menu-icon-div">
+      <i class="fa-solid fa-mobile-screen menu-icon"></i>
+      <span class="menu-span">contact me</span>
     </div>
   </button>
 </mat-menu>

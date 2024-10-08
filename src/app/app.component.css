@@ -36,7 +36,23 @@ mat-tab-group {
   text-transform: uppercase;
 }
 
-.menu-item {
+
+.menu-icon-div {
+  width: 155px;
+  flex-grow: inherit;
   display: flex;
   flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+.menu-icon {
+  flex: 1;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: red;
+  justify-content: left;
+
+}
+.menu-span {
+  flex: 4;
 }
