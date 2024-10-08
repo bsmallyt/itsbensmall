@@ -20,7 +20,7 @@ mat-tab-group {
 }
 .toolbar-title-button:hover {
   text-decoration-line: underline;
-  text-decoration: black;
+  text-decoration-color: black;
 }
 .toolbar-icon {
   color: red;
