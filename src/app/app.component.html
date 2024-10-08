@@ -38,16 +38,15 @@
 </mat-menu>
 
 
-
 <!--for the Projects section-->
-<mat-tab-group *ngIf="display['projects']">
+<mat-tab-group *ngIf="display['projects'] || display['redcube']">
   <div class="tabs">
-    <mat-tab label="webscrapper">
+    <mat-tab *ngIf="display['projects']" label="webscrapper">
     </mat-tab>
-    <mat-tab label="this website">
+    <mat-tab *ngIf="display['projects']" label="this website">
       <div></div>
     </mat-tab>
-    <mat-tab label="phi3 chat">
+    <mat-tab *ngIf="display['projects']" label="phi3 chat">
     </mat-tab>
     <mat-tab label="redcube">
       <app-game></app-game>
@@ -55,14 +54,14 @@
   </div>
 </mat-tab-group>
 
-<!--for the redcube section-->
+<!--for the redcube section
 <mat-tab-group *ngIf="display['redcube']">
   <div class="tabs">
     <mat-tab label="the redcube">
       <app-game></app-game>
     </mat-tab>
   </div>
-</mat-tab-group>
+</mat-tab-group> -->
 
 
 

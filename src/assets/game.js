@@ -58,7 +58,7 @@ class Particle {
 
 let gameInstance;
 
-export function startGame(ctx, canvas, click) {
+export function startGame(ctx, canvas) {
   isClicked = isClicked;
   mouseX = 0;
   mouseY = 0;

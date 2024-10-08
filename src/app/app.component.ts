@@ -8,6 +8,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import { AppGame } from "./game.component";
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -27,12 +28,10 @@ export class AppComponent {
   };
 
   toggle(key: string) {
-    if (!this.display[key]) {
-      Object.keys(this.display).forEach(toggle => {
-        this.display[toggle] = false;
-      });
-      this.display[key] = true;
-    }
+    Object.keys(this.display).forEach(toggle => {
+      this.display[toggle] = false;
+    });
+    this.display[key] = true;
   }
 }
 

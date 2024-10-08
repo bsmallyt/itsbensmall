@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, AfterViewInit, ViewChild, Renderer2, Inject, HostListener } from '@angular/core';
+import { Component, ElementRef, OnInit, AfterViewInit, OnDestroy, ViewChild, Renderer2, Inject, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DOCUMENT } from '@angular/common';
 import * as game from '../assets/game.js';
@@ -11,10 +11,14 @@ import * as game from '../assets/game.js';
   `,
   imports: [CommonModule]
 })
-export class AppGame implements AfterViewInit {
+export class AppGame implements AfterViewInit, OnDestroy {
   @ViewChild('myCanvas', { static: true }) game!: ElementRef<HTMLCanvasElement>;
 
   constructor(private renderer2: Renderer2, @Inject(DOCUMENT) private document: Document) {}
+
+  ngOnDestroy() {
+    game.stop();
+  }
 
   ngAfterViewInit() {
     this.initializeGame();
@@ -27,7 +31,7 @@ export class AppGame implements AfterViewInit {
 
     if (ctx) {
       game.stop(); 
-      game.startGame(ctx, canvas, false);
+      game.startGame(ctx, canvas);
     }
   }
 
