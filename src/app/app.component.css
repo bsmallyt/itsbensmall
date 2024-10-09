@@ -1,4 +1,10 @@
 
+.text {
+  font-family: "Comic Sans MS", "Comic Sans";
+  font-size: 16px;
+  color: black;
+}
+
 mat-grid-tile {
   background: lightblue;
 }
@@ -58,3 +64,4 @@ mat-tab-group {
 .menu-span {
   flex: 4;
 }
+

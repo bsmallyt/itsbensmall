@@ -26,25 +26,25 @@
   <button mat-menu-item (click)="toggle('about_me')">
     <div class="mat-mdc-menu-item menu-icon-div">
       <i class="fa-solid fa-film menu-icon"></i>
-      <span class="menu-span">its me</span>
+      <span class="menu-span text">its me</span>
     </div>
   </button>
   <button mat-menu-item (click)="toggle('projects')">
     <div class="mat-mdc-menu-item menu-icon-div">
       <i class="fa-solid fa-code menu-icon"></i>
-      <span class="menu-span">projects</span>
+      <span class="menu-span text">projects</span>
     </div>
   </button>
   <button mat-menu-item (click)="toggle('redcube')">
     <div class="mat-mdc-menu-item menu-icon-div">
       <i class="fa-solid fa-cube menu-icon"></i>
-      <span class="menu-span">games</span>
+      <span class="menu-span text">games</span>
     </div>
   </button>
   <button mat-menu-item (click)="toggle('contact_me')" disabled>
     <div class="mat-mdc-menu-item menu-icon-div">
       <i class="fa-solid fa-mobile-screen menu-icon"></i>
-      <span class="menu-span">contact me</span>
+      <span class="menu-span text">contact me</span>
     </div>
   </button>
 </mat-menu>
@@ -52,19 +52,34 @@
 
 <!--for the Projects section-->
 <mat-tab-group *ngIf="display['projects'] || display['redcube'] || display['about_me']">
-  <div class="tabs">
-    <mat-tab *ngIf="display['about_me']" label="it's me"></mat-tab>
+  <div class="tabs text">
+    <mat-tab *ngIf="display['about_me']">
+      <ng-template mat-tab-label>
+        <span class="text">it's me</span>
+      </ng-template>
+    </mat-tab>
 
 
 
-    <mat-tab *ngIf="display['projects']" label="webscrapper">
+    <mat-tab *ngIf="display['projects']">
+      <ng-template mat-tab-label>
+        <span class="text">webscrapper</span>
+      </ng-template>
     </mat-tab>
-    <mat-tab *ngIf="display['projects']" label="this website">
-      <div></div>
+    <mat-tab *ngIf="display['projects']">
+      <ng-template mat-tab-label>
+        <span class="text">this website</span>
+      </ng-template>
     </mat-tab>
-    <mat-tab *ngIf="display['projects']" label="phi3 chat">
+    <mat-tab *ngIf="display['projects']">
+      <ng-template mat-tab-label>
+        <span class="text">phi3 chat</span>
+      </ng-template>
     </mat-tab>
-    <mat-tab label="redcube">
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span class="text">redcube</span>
+      </ng-template>
       <app-game></app-game>
     </mat-tab>
   </div>
