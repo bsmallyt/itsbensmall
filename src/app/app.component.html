@@ -20,6 +20,11 @@
   </button>
 </mat-toolbar>
 
+<!-- For main menu-->
+<div *ngIf="display['home']" class="base">
+  <app-pics></app-pics>
+</div>
+
 
 <!--for the Menu selector section-->
 <mat-menu #menu="matMenu">
@@ -60,7 +65,6 @@
     </mat-tab>
 
 
-
     <mat-tab *ngIf="display['projects']">
       <ng-template mat-tab-label>
         <span class="text">webscrapper</span>
@@ -76,6 +80,8 @@
         <span class="text">phi3 chat</span>
       </ng-template>
     </mat-tab>
+
+
     <mat-tab>
       <ng-template mat-tab-label>
         <span class="text">redcube</span>

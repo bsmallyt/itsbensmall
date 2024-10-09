@@ -4,6 +4,12 @@
   font-size: 16px;
   color: black;
 }
+.base {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 64px);
+}
 
 mat-grid-tile {
   background: lightblue;
