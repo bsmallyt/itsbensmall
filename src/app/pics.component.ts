@@ -14,7 +14,7 @@ export class AppPics implements AfterViewInit {
 
   ngAfterViewInit() {
     this.ctx = this.myCanvas.nativeElement.getContext('2d')!;
-    this.image.src = 'https://www.youtube.com/embed/__cjVAmpv_4';
+    this.image.src = 'https://imagedelivery.net/JFKtCgwTPfudztWkJA41Xw/4b2b6f23-1510-4342-8293-fb31bc213f00/public';
 
     this.resizeCanvas();
   }
@@ -22,11 +22,14 @@ export class AppPics implements AfterViewInit {
   resizeCanvas() {
     const canvas = this.myCanvas.nativeElement;
     
-    const width = window.innerWidth;
-    const height = window.innerHeight;
+    const maxWidth = window.innerWidth * 0.8;
+    const aspectRatio = this.image.naturalWidth / this.image.naturalHeight;
+    
+    const width = maxWidth;
+    const height = width / aspectRatio;
 
-    canvas.width = width * 0.8;
-    canvas.height = height * 0.8;
+    canvas.width = width;
+    canvas.height = height;
 
     this.ctx.clearRect(0, 0, canvas.width, canvas.height);
     this.ctx.drawImage(this.image, 0, 0, canvas.width, canvas.height);
