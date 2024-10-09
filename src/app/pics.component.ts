@@ -14,7 +14,7 @@ export class AppPics implements AfterViewInit {
 
   ngAfterViewInit() {
     this.ctx = this.myCanvas.nativeElement.getContext('2d')!;
-    this.image.src = '../assets/one.jpg';
+    this.image.src = '../assets/band.png';
 
     this.resizeCanvas();
   }
