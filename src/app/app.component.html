@@ -4,53 +4,45 @@
       <i class="fa-solid fa-bars toolbar-icon"></i>
     </div>
   </button>
-  <button (click)="toggle('home')" class="toolbar-title-button">
+  <button (click)="toggle('home'); togglescroll('on')" class="toolbar-title-button">
     <span class="toolbar-text">itsbensmall</span>
   </button>
   <span class="toolbar-spacer"></span>
-  <button mat-icon-button (click)="toggle('projects')" class="toolbar-icon-button" title="projects" >
+  <button mat-icon-button (click)="toggle('projects'); togglescroll('off')" class="toolbar-icon-button" title="projects" >
     <div class="toolbar-icon-div">
       <i class="fa-solid fa-code toolbar-icon"></i>
     </div>
   </button>
-  <button mat-icon-button (click)="toggle('redcube')" class="toolbar-icon-button" title="redcube">
+  <button mat-icon-button (click)="toggle('redcube'); togglescroll('off')" class="toolbar-icon-button" title="redcube">
     <div class="toolbar-icon-div">
       <i class="fa-solid fa-cube toolbar-icon"></i>
     </div>
   </button>
 </mat-toolbar>
 
-<!-- For main menu-->
-<div *ngIf="display['home']" class="base">
-  <div class="base-span mat-tab"></div>
-  <app-pics></app-pics>
-
-  <!--<iframe width="420" height="315" src="https://www.youtube.com/embed/__cjVAmpv_4" ></iframe>-->
-
-</div>
-
+<div class="toolbar-spacer"></div>
 
 <!--for the Menu selector section-->
 <mat-menu #menu="matMenu">
-  <button mat-menu-item (click)="toggle('about_me')">
+  <button mat-menu-item (click)="toggle('about_me'); togglescroll('off')">
     <div class="mat-mdc-menu-item menu-icon-div">
       <i class="fa-solid fa-film menu-icon"></i>
       <span class="menu-span text">its me</span>
     </div>
   </button>
-  <button mat-menu-item (click)="toggle('projects')">
+  <button mat-menu-item (click)="toggle('projects'); togglescroll('off')">
     <div class="mat-mdc-menu-item menu-icon-div">
       <i class="fa-solid fa-code menu-icon"></i>
       <span class="menu-span text">projects</span>
     </div>
   </button>
-  <button mat-menu-item (click)="toggle('redcube')">
+  <button mat-menu-item (click)="toggle('redcube'); togglescroll('off')">
     <div class="mat-mdc-menu-item menu-icon-div">
       <i class="fa-solid fa-cube menu-icon"></i>
       <span class="menu-span text">games</span>
     </div>
   </button>
-  <button mat-menu-item (click)="toggle('contact_me')" disabled>
+  <button mat-menu-item (click)="toggle('contact_me'); togglescroll('off')" disabled>
     <div class="mat-mdc-menu-item menu-icon-div">
       <i class="fa-solid fa-mobile-screen menu-icon"></i>
       <span class="menu-span text">contact me</span>
@@ -59,8 +51,22 @@
 </mat-menu>
 
 
+
+<!-- For main menu-->
+<div *ngIf="display['home']" class="base">
+  <div class="base-content">
+    <div class="base-span mat-tab"></div>
+    <app-pics></app-pics>
+    <app-youtube></app-youtube>
+    <div class="spacer"></div>
+  </div>
+</div>
+
+
+
 <!--for the Projects section-->
 <mat-tab-group *ngIf="display['projects'] || display['redcube'] || display['about_me']">
+  
   <div class="tabs text">
     <mat-tab *ngIf="display['about_me']">
       <ng-template mat-tab-label>
@@ -95,6 +101,15 @@
   </div>
 </mat-tab-group>
 
+
+
+
+
+
+
+
+
+
 <!--for the redcube section
 <mat-tab-group *ngIf="display['redcube']">
   <div class="tabs">
@@ -103,8 +118,6 @@
     </mat-tab>
   </div>
 </mat-tab-group> -->
-
-
 
 <!--
 <mat-grid-list cols="2" rowHeight="2:1">

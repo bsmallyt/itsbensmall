@@ -6,7 +6,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Prevent scroll bars */
   width: 100%;
   height: 100%;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
