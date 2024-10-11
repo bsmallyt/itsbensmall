@@ -14,7 +14,7 @@ export class AppYT implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const video = this.youtubeVid.nativeElement;
-    video.src = "https://www.youtube.com/embed/" + this.vidId;
+    video.src = "https://www.youtube.com/embed/" + this.vidId + "?rel=0&modestbranding=1";
 
     this.resize();
   }
