@@ -121,6 +121,7 @@ mat-toolbar {
 
   border: solid;
   border-radius: 25px;
+  border-color: black;
 }
 .main-contents-img:hover {
   border-color: red;
