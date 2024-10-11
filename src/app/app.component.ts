@@ -38,7 +38,7 @@ export class AppComponent {
     });
     this.display[key] = true;
     if (key == 'home') {
-      this.forceReload();
+      //this.forceReload();
     }
   }
 
