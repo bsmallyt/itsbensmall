@@ -60,7 +60,26 @@
       <p class="text vid-text">Hey! It's me, Benjamin Small. These are some of my favorite moments</p>
     </div>
     <app-img></app-img>
-    <div class="base-span"></div>
+    <div class="main-span"></div>
+
+    <div class="text-block">
+      <p class="text vid-text">Learn more about me and what I do</p>
+    </div>
+    <div class="main-contents">
+      <div class="main-contents-div">
+        <button class="main-contents-button" (click)="toggle('about_me'); togglescroll('off')">
+          <img src="https://imagedelivery.net/JFKtCgwTPfudztWkJA41Xw/99a5afcc-fef6-4f55-2909-835fbf9bd000/public" class="main-contents-img">
+        </button>
+        <p class="text main-contents-text">about me</p>
+      </div>
+      <div class="main-contents-div">
+        <button class="main-contents-button" (click)="toggle('projects'); togglescroll('off')">
+          <img src="https://imagedelivery.net/JFKtCgwTPfudztWkJA41Xw/84ce4653-06d1-4a88-2c2d-cba59502cf00/public" class="main-contents-img">
+        </button>
+        <p class="text main-contents-text">projects</p>
+      </div>
+    </div>
+    <div class="main-span"></div>
 
     <div class="text-block">
       <p class="text vid-text">Below are some of the best youtube videos that I've made with the help of my friends</p>
@@ -68,8 +87,19 @@
     <app-youtube [vidId]="ytVids['thanks']"></app-youtube>
     <div class="base-span"></div>
     <app-youtube [vidId]="ytVids['jdsfood']"></app-youtube>
-    <div class="base-span"></div>
-    <div class="spacer"></div>
+    <div class="main-span"></div>
+
+    <div class="text-block">
+      <p class="text vid-text">Don't forget to check out falling red cube</p>
+    </div>
+    <div class="main-contents-div">
+      <button class="main-contents-button" (click)="toggle('redcube'); togglescroll('off')">
+        <img src="https://imagedelivery.net/JFKtCgwTPfudztWkJA41Xw/ef6ea12b-7f49-4c5f-dec2-460a3e17a700/public" class="main-contents-img">
+      </button>
+      <p class="text main-contents-text">redcube</p>
+    </div>
+    <div class="main-span"></div>
+    
   </div>
 </div>
 
@@ -114,27 +144,3 @@
 
 
 
-
-
-
-
-
-
-
-<!--for the redcube section
-<mat-tab-group *ngIf="display['redcube']">
-  <div class="tabs">
-    <mat-tab label="the redcube">
-      <app-game></app-game>
-    </mat-tab>
-  </div>
-</mat-tab-group> -->
-
-<!--
-<mat-grid-list cols="2" rowHeight="2:1">
-  <mat-grid-tile>Hey Tope</mat-grid-tile>
-  <mat-grid-tile></mat-grid-tile>
-  <mat-grid-tile></mat-grid-tile>
-  <mat-grid-tile></mat-grid-tile>
-</mat-grid-list>
--->

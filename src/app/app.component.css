@@ -89,12 +89,46 @@ mat-toolbar {
   padding-right: 5px;
   color: red;
   justify-content: left;
-
 }
 .menu-span {
   flex: 4;
 }
 
+
+.main-span {
+  height: 100px;
+}
+.main-contents {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.main-contents-div {
+  flex: 1;
+  text-align: center;
+
+}
+.main-contents-button {
+  background-color: transparent;
+  border: none;
+}
+.main-contents-img {
+  min-width: 275px;
+  width: 75%;
+
+  border: solid;
+  border-radius: 25px;
+}
+.main-contents-img:hover {
+  border-color: red;
+}
+.main-contents-text {
+  font-size: 25px;
+  font-weight: bold;
+}
 .vid-block {
   background-color: white;
 }
