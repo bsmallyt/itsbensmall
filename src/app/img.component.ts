@@ -55,8 +55,8 @@ export class AppImg implements AfterViewInit, OnDestroy {
     const setAspectRatio = 4 / 3;
 
 
-    const maxWidth = window.innerWidth * 0.75;
-    const maxHeight = window.innerHeight * 0.75;
+    const maxWidth = window.innerWidth * 0.8;
+    const maxHeight = window.innerHeight * 0.8;
 
     let width = maxWidth;
     let height = width / picAspectRatio;
