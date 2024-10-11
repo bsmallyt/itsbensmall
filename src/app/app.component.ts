@@ -49,7 +49,7 @@ export class AppComponent {
 
   togglescroll(key: string) {
     if (key == "on") {
-      this.renderer.setStyle(document.body, 'overflow', 'scroll');
+      this.renderer.setStyle(document.body, 'overflow-y', 'scroll');
     } else {
       this.renderer.setStyle(document.body, 'overflow', 'hidden');
     }

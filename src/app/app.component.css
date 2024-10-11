@@ -27,13 +27,6 @@
 }
 
 
-mat-grid-tile {
-  background: lightblue;
-}
-mat-tab-group {
-  background: #faf9fd;
-}
-
 mat-toolbar {
   position: fixed;
   height: 64px;
@@ -141,6 +134,32 @@ mat-toolbar {
 app-youtube {
   display: inline-flex;
 }
+
+
+.about-content {
+  background-color: transparent;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.about-content-img {
+  flex: 4;
+  min-width: 325px;
+}
+.about-content-text {
+  flex: 8;
+}
+.about-img {
+  width: 80%;
+
+  border: solid;
+  border-radius: 25px;
+  border-color: black;
+}
+.about-span {
+  height: 49px;
+}
+
 
 .spacer {
   height: 500px;
