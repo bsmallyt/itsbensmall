@@ -1,19 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
+}
 
-  background-attachment: fixed;
+body {
+  font-family: "Comic Sans MS", "Comic Sans";
+  position: relative; 
+}
+
+body::before {
+  content: "";
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
   background-image: url('https://imagedelivery.net/JFKtCgwTPfudztWkJA41Xw/6cd67f46-61d6-49c9-b3f9-68f149e7c800/public');
   background-size: cover;
   background-position: center 50px;
+  background-attachment: fixed;
+
+  filter: blur(2px);
+  z-index: -1;
 }
+
 body::-webkit-scrollbar {
   display: none;
 }
