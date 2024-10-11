@@ -56,8 +56,19 @@
 <div *ngIf="display['home']" class="base">
   <div class="base-content">
     <div class="base-span mat-tab"></div>
+    <div class="text-block">
+      <p class="text vid-text">Hey! It's me, Benjamin Small. These are some of my favorite moments</p>
+    </div>
     <app-img></app-img>
-    <app-youtube></app-youtube>
+    <div class="base-span"></div>
+
+    <div class="text-block">
+      <p class="text vid-text">Below are some of my favorite youtube videos that I've made with the help of my friends</p>
+    </div>
+    <app-youtube [vidId]="ytVids['thanks']"></app-youtube>
+    <div class="base-span"></div>
+    <app-youtube [vidId]="ytVids['jdsfood']"></app-youtube>
+    <div class="base-span"></div>
     <div class="spacer"></div>
   </div>
 </div>

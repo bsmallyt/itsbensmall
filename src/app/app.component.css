@@ -3,6 +3,12 @@
   font-size: 16px;
   color: black;
 }
+.text-block {
+  justify-content: center;
+  text-align: center;
+  padding-left: 25px;
+  padding-right: 25px;
+}
 .base {
   display: flex;
   flex-direction: column;
@@ -89,6 +95,17 @@ mat-toolbar {
   flex: 4;
 }
 
+.vid-block {
+  background-color: white;
+}
+.vid-text {
+  font-size: 25px;
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+app-youtube {
+  display: inline-flex;
+}
 
 .spacer {
   height: 500px;

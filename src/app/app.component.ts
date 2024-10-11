@@ -7,7 +7,6 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import { AppGame } from "./game.component";
-import { AppPics } from './pics.component';
 import { AppYT } from './yt.component';
 import { AppImg } from './img.component';
 import { Renderer2 } from '@angular/core';
@@ -16,7 +15,7 @@ import { Renderer2 } from '@angular/core';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AppGame, AppPics, AppYT, AppImg, CommonModule, MatButtonModule, MatGridListModule, MatTabsModule, MatToolbarModule, MatMenuModule],
+  imports: [RouterOutlet, AppGame, AppYT, AppImg, CommonModule, MatButtonModule, MatGridListModule, MatTabsModule, MatToolbarModule, MatMenuModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -24,6 +23,11 @@ export class AppComponent {
   title = 'itsbensmall';
 
   constructor(private renderer: Renderer2) {}
+
+  ytVids: Record<string, string> = {
+    jdsfood: "u43HwYUDb9U",
+    thanks: "__cjVAmpv_4"
+  };
 
   display: Record<string, boolean> = {
     home: true,

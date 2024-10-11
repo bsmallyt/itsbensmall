@@ -1,16 +1,21 @@
-import { Component, ViewChild, ElementRef, AfterViewInit, HostListener, OnDestroy } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, HostListener, Input, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-youtube',
   standalone: true,
   template: `
-    <iframe #youtubeVid src="https://www.youtube.com/embed/u43HwYUDb9U" allow="autoplay; encrypted-media" allowfullscreen style="border-style: solid; border-radius: 5px;"></iframe>
+    <iframe #youtubeVid allow="autoplay; encrypted-media" allowfullscreen 
+      style="border-style: none; border-radius: 25px;"></iframe>
   `,
 })
 export class AppYT implements AfterViewInit {
   @ViewChild('youtubeVid', { static: false }) youtubeVid!: ElementRef<HTMLIFrameElement>;
+  @Input() vidId? : string;
 
   ngAfterViewInit(): void {
+    const video = this.youtubeVid.nativeElement;
+    video.src = "https://www.youtube.com/embed/" + this.vidId;
+
     this.resize();
   }
 
