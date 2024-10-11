@@ -24,7 +24,7 @@
 
 <!--for the Menu selector section-->
 <mat-menu #menu="matMenu">
-  <button mat-menu-item (click)="toggle('about_me'); togglescroll('off')">
+  <button mat-menu-item (click)="toggle('about_me'); togglescroll('on')">
     <div class="mat-mdc-menu-item menu-icon-div">
       <i class="fa-solid fa-film menu-icon"></i>
       <span class="menu-span text">its me</span>
@@ -67,7 +67,7 @@
     </div>
     <div class="main-contents">
       <div class="main-contents-div">
-        <button class="main-contents-button" (click)="toggle('about_me'); togglescroll('off')">
+        <button class="main-contents-button" (click)="toggle('about_me'); togglescroll('on')">
           <img src="https://imagedelivery.net/JFKtCgwTPfudztWkJA41Xw/99a5afcc-fef6-4f55-2909-835fbf9bd000/public" class="main-contents-img">
         </button>
         <p class="text main-contents-text">about me</p>
