@@ -50,17 +50,23 @@ export class AppImg implements AfterViewInit, OnDestroy {
 
   resizeCanvas() {
     const imageElement = this.image.nativeElement;
-    
-    const maxWidth = window.innerWidth * 0.8;
-    const maxHeight = window.innerHeight * 0.8;
-    const aspectRatio = imageElement.naturalWidth / imageElement.naturalHeight;
+
+    const picAspectRatio = imageElement.naturalWidth / imageElement.naturalHeight;
+    const setAspectRatio = 4 / 3;
+
+
+    const maxWidth = window.innerWidth * 0.75;
+    const maxHeight = window.innerHeight * 0.75;
 
     let width = maxWidth;
-    let height = width / aspectRatio;
+    let height = width / picAspectRatio;
 
     if (height > maxHeight) {
       height = maxHeight;
-      width = height * aspectRatio;
+      width = height * picAspectRatio;
+    } else {
+      height = width / setAspectRatio;
+      width = height * picAspectRatio;
     }
 
     imageElement.width = width;
