@@ -114,9 +114,9 @@ mat-toolbar {
 .main-contents-button {
   background-color: transparent;
   border: none;
+  min-width: 325px;
 }
 .main-contents-img {
-  min-width: 275px;
   width: 75%;
 
   border: solid;
