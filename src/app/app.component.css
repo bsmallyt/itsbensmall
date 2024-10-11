@@ -136,6 +136,10 @@ app-youtube {
 }
 
 
+.about-text {
+  padding: 25px;
+  min-width: 325px;
+}
 .about-content {
   background-color: transparent;
   display: flex;
@@ -143,13 +147,18 @@ app-youtube {
   flex-direction: row;
 }
 .about-content-img {
+  display: flex;
   flex: 4;
   min-width: 325px;
+  
+  justify-content: center;
+  align-items: center;
 }
 .about-content-text {
   flex: 8;
 }
 .about-img {
+  display: flex;
   width: 80%;
 
   border: solid;
