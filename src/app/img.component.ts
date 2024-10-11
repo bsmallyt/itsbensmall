@@ -1,17 +1,15 @@
 import { Component, ViewChild, ElementRef, AfterViewInit, HostListener, OnDestroy } from '@angular/core';
 
 @Component({
-  selector: 'app-pics',
+  selector: 'app-img',
   standalone: true,
   template: `
-    <canvas #myCanvas style="border-style: solid; border-radius: 5px;"></canvas>
+    <img #image style="border-style: solid; border-radius: 5px;">
     <img>
   `,
 })
-export class AppPics implements AfterViewInit, OnDestroy {
-  @ViewChild('myCanvas', { static: false }) myCanvas!: ElementRef<HTMLCanvasElement>;
-  private ctx!: CanvasRenderingContext2D;
-  private image = new Image();
+export class AppImg implements AfterViewInit, OnDestroy {
+  @ViewChild('image', { static: false }) image!: ElementRef<HTMLImageElement>;
   private currentIndex = 0;
   private intervalId: any;
 
@@ -28,8 +26,6 @@ export class AppPics implements AfterViewInit, OnDestroy {
   ];
 
   ngAfterViewInit() {
-    this.ctx = this.myCanvas.nativeElement.getContext('2d')!;
-
     this.startImageIteration();
   }
 
@@ -43,19 +39,21 @@ export class AppPics implements AfterViewInit, OnDestroy {
   }
 
   loadImage() {
-    this.image.src = 'https://imagedelivery.net/JFKtCgwTPfudztWkJA41Xw/' + this.images[this.currentIndex][0] + '/' + this.images[this.currentIndex][1];
+    const imageElement = this.image.nativeElement
 
-    this.image.onload = () => {
+    imageElement.src = 'https://imagedelivery.net/JFKtCgwTPfudztWkJA41Xw/' + this.images[this.currentIndex][0] + '/' + this.images[this.currentIndex][1];
+
+    imageElement.onload = () => {
       this.resizeCanvas();
     };
   }
 
   resizeCanvas() {
-    const canvas = this.myCanvas.nativeElement;
+    const imageElement = this.image.nativeElement;
     
     const maxWidth = window.innerWidth * 0.8;
     const maxHeight = window.innerHeight * 0.8;
-    const aspectRatio = this.image.naturalWidth / this.image.naturalHeight;
+    const aspectRatio = imageElement.naturalWidth / imageElement.naturalHeight;
 
     let width = maxWidth;
     let height = width / aspectRatio;
@@ -65,11 +63,8 @@ export class AppPics implements AfterViewInit, OnDestroy {
       width = height * aspectRatio;
     }
 
-    canvas.width = width;
-    canvas.height = height;
-
-    this.ctx.clearRect(0, 0, canvas.width, canvas.height);
-    this.ctx.drawImage(this.image, 0, 0, canvas.width, canvas.height);
+    imageElement.width = width;
+    imageElement.height = height;
   }
 
   @HostListener('window:resize')

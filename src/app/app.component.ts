@@ -9,13 +9,14 @@ import {MatMenuModule} from '@angular/material/menu';
 import { AppGame } from "./game.component";
 import { AppPics } from './pics.component';
 import { AppYT } from './yt.component';
+import { AppImg } from './img.component';
 import { Renderer2 } from '@angular/core';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AppGame, AppPics, AppYT, CommonModule, MatButtonModule, MatGridListModule, MatTabsModule, MatToolbarModule, MatMenuModule],
+  imports: [RouterOutlet, AppGame, AppPics, AppYT, AppImg, CommonModule, MatButtonModule, MatGridListModule, MatTabsModule, MatToolbarModule, MatMenuModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
