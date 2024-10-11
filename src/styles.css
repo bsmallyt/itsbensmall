@@ -8,6 +8,11 @@ html, body {
   padding: 0;
   width: 100%;
   height: 100%;
+
+  background-attachment: fixed;
+  background-image: url('https://imagedelivery.net/JFKtCgwTPfudztWkJA41Xw/6cd67f46-61d6-49c9-b3f9-68f149e7c800/public');
+  background-size: cover;
+  background-position: center 50px;
 }
 body::-webkit-scrollbar {
   display: none;

@@ -4,7 +4,7 @@ import { Component, ViewChild, ElementRef, AfterViewInit, HostListener, OnDestro
   selector: 'app-youtube',
   standalone: true,
   template: `
-    <iframe #youtubeVid src="https://www.youtube.com/embed/__cjVAmpv_4" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <iframe #youtubeVid src="https://www.youtube.com/embed/u43HwYUDb9U" allow="autoplay; encrypted-media" allowfullscreen style="border-style: solid; border-radius: 5px;"></iframe>
   `,
 })
 export class AppYT implements AfterViewInit {
@@ -17,8 +17,8 @@ export class AppYT implements AfterViewInit {
   resize(): void {
     const youtube = this.youtubeVid.nativeElement;
 
-    let widthMax = window.innerWidth * 0.6;
-    let heightMax = window.innerHeight * 0.6;
+    let widthMax = window.innerWidth * 0.8;
+    let heightMax = window.innerHeight * 0.8;
     let aspectRatio = 1920/1080;
 
     let width = widthMax;
