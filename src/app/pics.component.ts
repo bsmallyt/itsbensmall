@@ -43,7 +43,7 @@ export class AppPics implements AfterViewInit, OnDestroy {
   }
 
   loadImage() {
-    this.image.src = 'https://imagedelivery.net/JFKtCgwTPfudztWkJA41Xw/' + this.images[this.currentIndex][0] + '/' + this.images[this.currentIndex][1];
+    this.image.src = `https://imagedelivery.net/JFKtCgwTPfudztWkJA41Xw/${this.images[this.currentIndex][0]}/${this.images[this.currentIndex][1]}`;
 
     this.image.onload = () => {
       this.resizeCanvas();
